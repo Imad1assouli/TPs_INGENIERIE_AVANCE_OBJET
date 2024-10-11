@@ -1,0 +1,5 @@
+Facture ID: 1
+Produit{libele='Produit 2', prix=34.0}	1
+Produit{libele='Produit 1', prix=15.0}	2
+Prix = 64.0
+PrixTTC = 76.8

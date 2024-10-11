@@ -1,0 +1,2 @@
+1.le principe SRP (Single Responsibility Principle) n'est pas respecté. La classe Facture a plusieurs responsabilités.
+2.Chaque classe a maintenant une seule responsabilité : Facture gère les produits et les calculs, FacturePrinter s'occupe de l'impression, et FactureSaver de la sauvegarde. Cela respecte le principe SRP.
