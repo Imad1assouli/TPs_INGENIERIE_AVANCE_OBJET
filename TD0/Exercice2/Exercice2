@@ -1,0 +1,11 @@
+1.Le principe SOLID qui n'est pas respecté ici est SRP (Single Responsibility Principle) et
+OCP (Open/Closed Principle).
+
+SRP : La classe Compte gère plusieurs responsabilités. Elle gère à la fois les opérations bancaires (ajout d'opérations),
+le calcul des montants (selon le type de compte), ainsi que la création de comptes.
+
+OCP : Si on devait ajouter un nouveau type de compte, il faudrait modifier la classe Compte directement.
+Cela va à l'encontre de ce principe.
+
+2.cette structure rend le système extensible : pour ajouter un nouveau type de compte, il suffit de créer une nouvelle sous-classe sans modifier les classes existantes,
+respectant ainsi le principe d'ouverture/fermeture. Ce design simplifie la maintenance et favorise l'évolutivité du code.
