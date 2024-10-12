@@ -1,0 +1,7 @@
+1.Le principe de substitution de Liskov (L) n'est pas respecté.
+si la classe MatriceYoung hérite d'une autre classe ( ArrayList ), elle doit se comporter comme cette classe mère.
+Dans notre code, la classe MatriceYoung hérite de ArrayList. Mais un tableau de Young et une liste (ArrayList) sont très différents !
+-ArrayList est une liste où tu peux ajouter ou enlever des éléments n'importe où.
+-MatriceYoung est un tableau bien ordonné avec des règles strictes pour l'insertion et l'extraction.
+
+2.
