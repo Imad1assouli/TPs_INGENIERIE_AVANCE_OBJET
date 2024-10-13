@@ -1,0 +1,55 @@
+1.Le code montre que la classe Calendrier dépend directement de la classe Personne, créant un couplage fort
+Solution :
+Utiliser une interface pour que Calendrier n'ait pas à dépendre directement de la classe Personne.
+L'interface permettrait d'utiliser d'autres types d'objets tant qu'ils respectent l'interface.
+Cela réduit le couplage entre Calendrier et Personne.
+2.
+public interface IPersonne {
+    String getNom();
+    LocalDate getDateDeNaissance();
+    int getAge();
+}
+
+public class Calendrier {
+    public void add(IPersonne personne) {
+
+    }
+}
+3.
+public interface IAmiFacebook {
+    String getNom();
+    LocalDate getDateNaissance();
+}
+
+Les éléments communs entre IPersonne et IAmiFacebook sont la méthode getNom() et getDateNaissance().
+Pour réduire le couplage entre Calendrier, Personne et les membres Facebook, nous pourrions introduire une interface commune, IContactAnniversaire,
+ qui définirait les méthodes communes aux deux interfaces.
+
+public interface IContactAnniversaire {
+    String getNom();
+    LocalDate getDateDeNaissance();
+    int getAge();
+    void envoyerMessageAnniversaire();
+
+}
+
+public interface IPersonne extends IContactAnniversaire {
+
+}
+
+public interface IAmiFacebook extends IContactAnniversaire {
+}
+
+public class Calendrier {
+    public void add(IContactAnniversaire contact) {
+    }
+}
+
+4.Le principe SOLID qui n'était pas respecté dans la première version de Calendrier est le principe de substitution de Liskov (Liskov Substitution Principle).
+Lorsque Calendrier dépendait directement de Personne, il ne pouvait pas accepter d'autres types de "personnes" (comme des amis Facebook) sans modification,
+ce qui violait ce principe. En introduisant une abstraction avec IContactAnniversaire, nous permettons à Calendrier de travailler avec n'importe quelle classe qui implémente cette interface,
+conformément au principe de substitution de Liskov.
+
+
+nous avons introduit l'abstraction IContactAnniversaire pour capturer les comportements communs à toutes les entités ayant un anniversaire.
+Cela permet de simplifier et de réduire le couplage dans le code.
