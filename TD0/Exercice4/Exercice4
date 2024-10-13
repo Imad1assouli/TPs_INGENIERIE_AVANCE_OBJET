@@ -1,0 +1,14 @@
+1.Le code ne respecte pas le principe de la responsabilité unique (SRP)
+2.
+Classe abstraite CompteUniversitaire :
+
+Elle centralise la gestion commune des logins pour tous types de comptes universitaires.
+La méthode abstraite genererLogin() oblige les sous-classes à fournir leur propre logique de génération de login.
+
+Sous-classes CompteEnseignant et CompteEtudiant :
+
+Chaque sous-classe est responsable de stocker les données spécifiques de son type (enseignant ou étudiant) et de générer le login de manière appropriée.
+CompteEnseignant contient un objet Enseignant, et CompteEtudiant contient un objet Etudiant.
+
+Séparation des responsabilités :
+Le principe de responsabilité unique (SRP) est respecté : chaque classe se concentre sur une seule tâche (compte et login pour CompteUniversitaire, gestion des données spécifiques pour Enseignant et Etudiant).
