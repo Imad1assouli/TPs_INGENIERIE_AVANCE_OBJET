@@ -1,0 +1,1 @@
+2.Avec la structure(IValidationAge,ValidationAgeRegion1), nous respectons mieux le principe OCP, car nous pouvons ajouter de nouvelles régions sans modifier les classes existantes.
